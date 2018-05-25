@@ -1,0 +1,60 @@
+main
+  background-color: $light
+
+.inverse-color
+  p, span, h1, h2, h3, h4, h5, h6
+    color: $font-light
+  a 
+    color: $font-light
+
+.orange-block
+  padding-top: 2em
+  padding-bottom: 2em
+  display: block
+  background-color: $secondary
+  @extend .inverse-color
+
+.black-block
+  padding: 2em
+  display: block
+  background-color: $dark
+  @extend .inverse-color
+
+.hero-content-main
+  padding: relative(25px)
+
+  @media only screen and (max-width: $tablet-width)
+    .primary-column
+      width: 100%
+
+.hero-bumper
+  .btn
+    display: block
+    width: 100%
+    text-align: center
+    @media only screen and (min-width: $tablet-width)
+      margin-top: 1em
+      width: auto
+      display: inline-block
+
+.secondary-cta-block
+  text-align: center
+  @media only screen and (min-width: $tablet-width)
+    .hero-bumper--title
+      padding-top: 2em
+
+.main-cta-block
+  text-align: center
+  @media only screen and (min-width: $tablet-width)
+    padding-top: 8em
+    padding-bottom: 8em
+
+
+.footer
+  border-top-width: $footer-border-top-width
+  border-top-style: solid
+  border-top-color: $footer-border-top-color
+  &--menu
+    overflow: hidden
+    
+

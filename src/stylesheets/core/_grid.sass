@@ -1,0 +1,110 @@
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container
+  
+  @media only screen and (min-width: $desktop-width)
+    width: $base-width
+    padding: 0 15px
+
+  position: relative
+  width: 100%
+  margin: 0 auto
+
+.container-fluid
+
+.one-third.column,
+.one-third.columns
+  @include col(1, 3)
+
+.two-thirds.column,
+.two-thirds.columns
+  @include col(2, 3)
+
+.one-fourth.column,
+.one-fourth.columns
+  @include col(1, 4)
+
+.three-fourths.column,
+.three-fourths.columns
+  @include col(3, 4)
+
+.one-half.column,
+.one-half.columns
+  @include col(1, 2)
+  &.mobile
+    @include col(1, 2, $mobile: true)
+
+.full-width.column,
+.full-width.columns
+  width: 100%
+  margin-left: 0
+  margin-right: 0
+
+.row
+  @include row()
+
+.pull-right
+  float: right
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after
+  content: "\0020"
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+
+.clearfix, .row
+  zoom: 1
+  &:before, &:after
+    content: "\0020"
+    display: block
+    overflow: hidden
+    visibility: hidden
+    width: 0
+    height: 0
+  &:after
+    clear: both 
+
+.clear
+  clear: both
+  display: block
+  overflow: hidden
+  visibility: hidden
+  width: 0
+  height: 0
+
+.pull-right
+  float: right
+
+.pull-left
+  float: left
+
+.hidden
+  display: none
+
+// tablets and devices smaller than a tablet
+@media only screen and (max-width: $tablet-width)
+  .hidden-sm
+    display: none !important
+
+// specificly tablets
+@media only screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1)
+   
+  .full-tablet.column,
+  .full-tablet.columns
+    width: 100%
+    margin-left: 0
+    margin-right: 0
+
+
+  .hidden-tablet
+    display: none !important
+
+@media only screen and (min-width: $desktop-width - 1)
+  .hidden-md-up
+    display: none!important
+
+  

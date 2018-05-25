@@ -1,0 +1,114 @@
+
+/// Converts a number from 0 to 100 to the English word
+/// @param {number} $int - Any number between 1 and 99
+/// @return {string} The English version of the number entered in.
+/// @access private
+@function numToString($int)
+  // set up lists
+  $ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
+  $teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+  $tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+
+  $int: abs($int) // no nonnegative numbers
+  $number: ""
+  $temp: $int / 10
+  $temp: floor($temp)
+  @if ($int >= 1 and $int <= 100)
+    @if ($temp < 1) // it's a one!
+      $number: nth($ones, $int % 10)
+
+    @if ($temp == 1) // in the teen range
+      @if($int % 10 == 0)
+        $number: "ten"
+      @else
+        $number: nth($teens, $int % 10)
+
+    @if ($temp >= 2 and $temp <= 9) // more than our teens
+      @if ($int % 10 == 0)
+        // means it's a number evenly divisible by 10
+        $number: nth($tens, $int / 10)
+      @else
+        $number: "#{nth($tens, floor($int / 10))}-#{nth($ones, $int % 10)}"
+
+    @if ($temp == 10) // this is the end...
+      $number: "one-hundred"
+
+  @else
+    $number: "Invalid parameter passed. Number must be between 1 and 100."
+
+  @return $number
+
+/// Calculates the relative units given absolute units.
+/// @param {string|number} $px - The unit in pixels.
+/// @param {number} $base - The base value to divide by.
+/// @param {string} $unit - `em`, `rem`, or `%` are valid **relative** values.
+/// @return {string} The new relative unit.
+/// @access private
+@function _calcRU($px, $base, $unit)
+  $unit: quote($unit)
+
+  @if not $unit == "em" or not $unit == "rem" or not $unit == "%"
+    @return null
+
+  @if not unitless($px)
+    $px: strip-units($px)
+
+  @if not unitless($base)
+    $base: strip-units($base)
+
+  @if($unit == "%")
+    @return percentage($px / $base)
+
+  @return #{($px / $base) * 1}#{$unit}
+  
+  
+////
+/// Global utility functions.
+////
+/// Strips the units from strings
+/// @param string|number $number - The number to remove units from.
+/// @return number Unitless number.
+/// @access public
+/// @link https://github.com/nex3/sass/issues/533
+@function strip-units($number) 
+  @return $number / ($number * 0 + 1)
+
+/// Takes in an absolute unit and gives back a relative one.
+/// @param number $px - A absolute unit.
+/// @param number $base [ $base-font-size ] - The base font size to calculate with.
+/// @return number Realtive `em` unit.
+/// @access public
+@function em($px, $base: $base-font-size) 
+  @return _calcRU($px, $base, "em")
+
+/// Takes in an absolute unit and gives back a relative one.
+/// @param number $px - A absolute unit.
+/// @param number $base [ $base-font-size ] - The base font size to calculate with.
+/// @return number Realtive `rem` unit.
+/// @access public
+@function rem($px, $base: $base-font-size) 
+  @return _calcRU($px, $base, "rem")
+
+/// Takes in an absolute unit and gives back a relative one.
+/// @param number $px - A absolute unit.
+/// @param number $base [ $base-font-size ] - The base font size to calculate with.
+/// @return number Realtive `%` unit.
+/// @access public
+@function percent($px, $base: $base-font-size) 
+  @return _calcRU($px, $base, "%")
+
+/// Takes in an absolute unit and gives back a relative one.
+/// @param number $size - A absolute unit.
+/// @access public
+/// @return number A relative unit based on the values of `$use-rem`, `$use-em`, and `$use-percent`.
+@function relative($size) 
+  @if ($use-rem == true and $use-em == false and $use-percent == false) 
+    @return rem($size)
+  @elseif ($use-em == true and $use-rem == false and $use-percent == false) 
+    @return em($size)
+  @elseif ($use-percent == true and $use-rem == false and $use-em == false) 
+    @return percent($size)
+
+  @return $size // we're still using pixels
+
+  

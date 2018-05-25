@@ -1,0 +1,43 @@
+{
+  "name": "coding-test-webpack",
+  "version": "1.0.0",
+  "description": "Coding Test for Super Devs",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "webpack-dev-server --port 4321 --hot",
+    "build": "webpack",
+    "lint": "standard",
+    "test": "standard && webpack --bail"
+  },
+  "author": "yourNameGoesHere",
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "autoprefixer": "^7.0.1",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.1.4",
+    "copy-webpack-plugin": "github:webpack-contrib/copy-webpack-plugin",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "flickity": "^2.1.1",
+    "font-awesome": "^4.1.0",
+    "glob": "^7.1.2",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.1.0",
+    "postcss-loader": "^2.0.3",
+    "sass-loader": "^6.0.3",
+    "slideout": "^1.0.1",
+    "style-loader": "^0.19.0",
+    "underscore": "^1.9.0",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-watch": "^0.2.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "github:webpack-contrib/copy-webpack-plugin",
+    "standard": "^10.0.2",
+    "webpack": "^3.12.0",
+    "webpack-cli": "^2.1.3"
+  }
+}

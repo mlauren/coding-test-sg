@@ -1,0 +1,64 @@
+/* BUTTONS */
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+  border-style: $button-border-style
+  border-color: $button-border-color
+  border-width: $button-border-width
+  background-color: $button-bkg-color
+
+  @include border-radius($button-border-radius)
+  color: $button-color
+  display: inline-block
+  font:
+    weight: bold
+    family: $form-font
+
+  font-size: $font-size * 1.25
+  text-decoration: none
+  cursor: pointer
+  line-height: normal
+  padding: relative(12px) relative(12px)
+
+  &:hover
+    background-color: darken($button-bkg-color, 5%)
+
+  &:active
+    background-color: darken($button-bkg-color, 5%)
+  
+  &.full-width
+    width: 100%
+    padding-left: 0 !important
+    padding-right: 0 !important
+    text-align: center
+
+  &.smaller
+    @include font-size($font-size - 2)
+    padding: relative(4px) relative(5px)
+
+  &.larger
+    @include font-size($font-size + 2)
+    padding: relative(10px) relative(18px)
+
+  &.hero
+    border-width: $button-cta-border-width
+    background-color: $button-cta-bkg-color
+    padding: 18px 20px;
+    font-size: 1.5rem;
+  
+  &.blank
+    color: $dark
+    background-color: transparent
+
+  &.cta-top
+    background-color: $button-cta-secondary-color
+
+/* Fix for odd Mozilla border & padding issues */
+button,
+input
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+

@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Coding-Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./dist/app.css">
+    <link rel="stylesheet" type="text/css" href="./dist/flickity.min.css">
+
+  </head>
+  <body>
+    <nav class="menu hidden slideout-menu" id="menu">
+      <div class="container menu--inner">
+        <ul class="menu--inner--items inverse-color">
+          <li class="menu-item">
+            <a href=""><i class="fa fa-home hidden-xs"></i> Home</a>
+          </li>
+          <li class="menu-item">
+            <a href=""><i class="fa fa-smile hidden-xs"></i> Live Happy</a>
+          </li>
+          <li class="menu-item">
+            <a href=""><i class="fa fa-heart hidden-xs"></i> Live Healthly</a>
+          </li>
+          <li class="menu-item hidden-xs">
+            <a href=""><i class="fa fa-comment hidden-xs"></i> Comments</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="panel slideout-panel slideout-panel-left panel" id="panel">
+      <header class="header">
+        <div class="container">
+          <div class="header--branding hidden">
+            <h1>Building Better Leaders</h1>
+          </div>
+          <nav class="row header--inner">
+            <div class="header--menu columns mobile one-half no-margins">
+              <a href="#" class="bumper btn blank toggle-button slideout-open slideout-toggle hidden-md-up">
+                <i class="fa fa-bars fa-2x"></i>
+              </a>
+            </div>
+            <div class="header--cta columns mobile one-half no-margins">
+              <p class="header--cta--content pull-right">
+                <a class="btn cta-primary cta-top">Apply Now</a>
+              </p>
+            </div>
+          </nav>
+        </div>
+        <div class="hidden-sm">
+          <nav class="menu-desktop">
+            <div class="container menu-desktop--inner">
+              <ul class="menu-desktop--inner--items list-inline inverse-color black-block pull-right">
+                <li class="menu-item">
+                  <a href="">Home</a>
+                </li>
+                <li class="menu-item">
+                  <a href="">Live Happy</a>
+                </li>
+                <li class="menu-item">
+                  <a href="">Live Healthly</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="masthead">
+        <div class="container masthead--inner">
+
+          <div class="main-carousel masthead-carousel inverse-color" show-current-index="2">
+            <!-- Slides -->
+            <div class="carousel-item columns full-width" data-slide-index="0" style="background-image: url(./dist/img/cat.jpg)">
+              <div class="carousel-item--inner">
+                <h4>Building Better Leaders</h4>
+                <p>Without ducking out of the holiday party too quick.</p>
+                <div class="carousel-item--inner--actions">
+                  <a class="btn btn-cta-2">Free Advice</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item columns full-width" data-slide-index="1" style="background-image: url(./dist/img/ducks.jpg)">             
+              <div class="carousel-item--inner">
+                <h4>Waiting for the Right Moment?</h4>
+                <p>Sometimes the right time to start is right now.</p>
+                <div class="carousel-item--inner--actions">
+                  <a class="btn btn-cta-2">Special Delivery</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-content-main">
+        <div class="container">
+          <div class="row">
+            <div class="columns one-half six primary-column" role="primary">
+              <div class="primary-column--header column-header">
+                <h3 class="h4"> Welcome to Development </h3>
+                <p class="lead">Please be thorough when coding...</p>
+              </div>
+              <div class="primary-column--body column-body">
+                <hr>
+                <p>Building websites is a great time to reflect on the cool things we can do with code. 
+                  We get to add alt tags, code links and get to stand by the latest in HTML or pre-processors 
+                  like sass or less. If you like webpack you'll love the project we have set up for you. 
+                  Good luck and have some fun!
+                </p>
+                <ul class="two-col check-list">
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                  <li><a href="#"><i class="fas fa-check"></i>Some Link</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="columns one-half secondary-column comment-section hidden-sm" role="secondary">
+              <div class="comment-section comment">
+                <div data-current-comment="1" id="comment-content" class="comment-content comment-comments">
+                  <div class="comment-content-item">
+                    <div class="comment-content-item--comment-quote">
+                        <i class="fas fa-quote-right fa-4x"></i>
+                    </div>
+                    <div class="comment-content-item--content">
+                      <div class="comment-content-item--content-card">
+                        <h3 data-content="comment">
+                          Comment 4
+                        </h3>
+                        <p data-content="author">
+                          Author
+                        </p>
+                      </div>
+                      <div class="comment-content-item--content-bottom">        
+                        <div class="comment-section--comment-nav-bottom">
+                          <div class="comment-section--prev">
+                            <a data-direction="left"><i class="fas fa-2x fa-angle-left"></i></a>
+                          </div>
+                          <div class="comment-section--next">
+                            <a data-direction="right"><i class="fas fa-2x fa-angle-right"></i></a>
+                          </div>
+                          <div class="comment-section--metadata">
+                            <span data-content="name">First Name,</span> <span data-content="date">1/4/2017</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-bumper tertiary secondary-cta-block orange-block">
+        <div class="container">
+          <div class="row">
+            <div class="columns three-fourths full-tablet hero-bumper--title">
+              <h3 class="h4">Let's put an end to world hunger today</h3>
+            </div>
+            <div class="columns one-fourth full-tablet hero-bumper--cta">
+              <a href="#" class="btn hero">Free Advice</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-bumper tertiary main-cta-block black-block">
+        <div class="container">
+          <div class="row">
+            <div class="columns full-width hero-bumper--title">
+              <h4 class="h3">Changing the world one pixel at a time.</h3>
+            </div>
+            <div class="columns full-width hero-bumper--cta">
+              <a href="#" class="btn hero">Box Model</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer black-block">
+        <div class="footer--menu container">
+          <ul class="text-right hidden-sm inline-list">
+            <li><a class="allcaps" href="#">Link 1</a></li>
+            <li><a class="allcaps" href="#">Link 2</a></li>
+            <li><a class="allcaps" href="#">Link 3</a></li>
+            <li><a class="allcaps" href="#">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="footer--disclaimer text-center hidden-md-up">
+          <p class="allcaps"> Copyright © 2017. Built by a confident developer</p>
+        </div>
+      </footer>
+    </main>
+
+    <script type="text/javascript" src="dist/app.js"></script>
+  </body>
+</html>

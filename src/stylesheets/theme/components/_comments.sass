@@ -1,0 +1,19 @@
+.comment
+  &-content-item
+    position: relative
+
+    &--comment-quote
+      position: absolute
+      right: 5%
+      top: -10px
+      z-index: 1
+    &--content
+      &-card
+        background-color: $primary
+        padding: 3em 1em
+
+    &--content-bottom,
+      .comment-section--next, .comment-section--prev, .comment-section--metadata
+        display: inline-block
+        a
+          cursor: pointer

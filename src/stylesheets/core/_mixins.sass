@@ -1,0 +1,25 @@
+/// Calculates the font-size automatically based on config settings.
+/// @paramnumber $size - The font size to convert.
+/// @parambool $fallback [ $use-px-fallback ] - Set true to fallback to px for legacy browsers.
+/// @access public
+@mixin font-size($size, $fallback: $use-px-fallback)
+  @if($fallback)
+    font-size: $size
+
+  @if($use-rem and not $use-em and not $use-percent)
+    font-size: rem($size)
+  @elseif($use-em and not $use-rem and not $use-percent)
+    font-size: em($size)
+  @elseif($use-percent and not $use-rem and not $use-em)
+    font-size: percent($size)
+  @else
+    @debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px."
+  @if(not $fallback) // we have no other choice...
+    font-size: $size
+
+/// Helper mixin to easily hide text.
+/// @access public
+@mixin hide-text
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden

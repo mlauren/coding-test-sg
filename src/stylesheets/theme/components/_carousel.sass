@@ -1,0 +1,64 @@
+
+.carousel-item
+  height: 300px
+  margin-right: 10px
+  text-align: left
+  background-position: center center
+  background-size: cover
+
+  h4
+    font-weight: 600
+
+  p
+    font-size: 1.5em
+    color: white
+
+  &--inner
+    margin-top: 20%
+    padding: 0 20px
+    @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width)
+      margin-top: 10%
+      padding: 0 50px
+
+    @media only screen and (min-width: $large-width)
+      margin-top: 6%
+      padding: 0 50px
+
+    @media only screen and (min-width: $tablet-width)
+      margin-top: 10%
+      padding: 0 5em
+
+    &--actions
+      text-align: center
+      @media only screen and (min-width: $tablet-width)
+        text-align: left
+
+  .carousel-item-image
+    max-width: 100%
+    width: 100%
+    /* center images in cells with flexbox */
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+
+.masthead-carousel
+  .flickity-button, .flickity-prev-next-button
+    background-color: rgba(0,0,0,0)
+    color: $font-light
+
+    &:hover
+      background: rgba(0,0,0,0)
+
+    .flickity-button-icon
+      fill: $font-light
+
+
+
+
+
+.main-carousel
+  .flickity-button
+    visibility: hidden
+    @media only screen and (min-width: $tablet-width)
+      visibility: visible

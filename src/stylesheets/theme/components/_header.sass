@@ -1,0 +1,23 @@
+.header
+  &--inner
+    border-top-width: $header-border-top-width
+    border-top-color: $header-border-top-color
+    border-top-style: solid
+    @media only screen and (min-width: $tablet-width)
+      border-top-color: $header-border-top-color-desktop
+
+
+  &--menu
+    .bumper
+      i
+        color: lighten($dark, 50%)
+    .toggle-button
+        padding-top: 15px
+
+  &--cta
+    &--content
+      margin-right: -16px
+      a.btn.cta-primary
+        padding: relative(16px)
+        border-radius: 0
+
